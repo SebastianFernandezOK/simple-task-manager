@@ -1,27 +1,28 @@
+```text
 task-manager/
 │
-├── .venv/                 # Entorno virtual de Python (ignorado por Git)
-├── .gitignore             # Archivos que Git debe ignorar (.venv, __pycache__, etc.)
-├── pyproject.toml         # Dependencias y configuración del proyecto
-└── src/                   # Carpeta raíz del código fuente
+├── .venv/                 # Python virtual environment (ignored by Git)
+├── .gitignore             # Files to be ignored by Git (.venv, __pycache__, etc.)
+├── pyproject.toml         # Project dependencies and configuration
+└── src/                   # Source code root directory
     ├── __init__.py
-    ├── main.py            # Punto de entrada (crea la instancia de FastAPI)
-    ├── config.py          # Variables de entorno y configuración general (Pydantic BaseSettings)
-    ├── database.py        # Conexión a la base de datos (SQLAlchemy / Motor, etc.)
+    ├── main.py            # Entry point (creates the FastAPI instance)
+    ├── config.py          # Environment variables and general settings (Pydantic BaseSettings)
+    ├── database.py        # Database connection (SQLAlchemy / Motor, etc.)
     │
-    ├── models/            # Modelos de base de datos (ej. SQLAlchemy ORM)
+    ├── models/            # Database models (e.g., SQLAlchemy ORM)
     │   ├── __init__.py
     │   └── task.py
     │
-    ├── schemas/           # Modelos de Pydantic para validar Request y Response
+    ├── schemas/           # Pydantic models for Request and Response validation
     │   ├── __init__.py
     │   └── task.py
     │
-    ├── routers/           # Los endpoints separados por módulos/recursos
+    ├── routers/           # Endpoints separated by modules/resources
     │   ├── __init__.py
     │   ├── auth.py
     │   └── tasks.py
     │
-    └── services/          # Lógica de negocio pesada (separada de los endpoints)
+    └── services/          # Heavy business logic (separated from endpoints)
         ├── __init__.py
         └── task_service.py

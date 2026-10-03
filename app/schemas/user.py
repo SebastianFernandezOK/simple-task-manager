@@ -6,7 +6,11 @@ class UserBase(SQLModel):
     dni: Optional[str] = Field(default=None, unique=True)
     email: str = Field(index=True, unique=True)
 
+class UserRegister(UserBase):
+    password: str
+
+    
+
 class UserLogin(SQLModel):
     email: str
     password: str
-    
